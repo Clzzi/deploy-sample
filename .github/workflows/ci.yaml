@@ -37,6 +37,8 @@ jobs:
 
   deploy:
     runs-on: ubuntu-latest
+    
+    needs: test
 
     steps:
       - uses: actions/checkout@v2
@@ -50,4 +52,3 @@ jobs:
           VERCEL_PROJECT_ID: prj_H196ekz6YOalgeVLl5j9ket3xwY0
           PREBUILT: true
           PRODUCTION: true
-    when: on_success
