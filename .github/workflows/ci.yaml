@@ -37,12 +37,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: Install dependencies
-        run: yarn install
-
-      - name: Build
-        run: yarn build
-      
       - name: vercel pull
         run: vercel pull --yes --environment=production --token=${{ secrets.GH_ACTIONS_VERCEL_TOKEN }}
 
