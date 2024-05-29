@@ -50,4 +50,4 @@ jobs:
           VERCEL_PROJECT_ID: prj_H196ekz6YOalgeVLl5j9ket3xwY0
           PREBUILT: true
           PRODUCTION: true
-        when: on_success
+    when: on_success
