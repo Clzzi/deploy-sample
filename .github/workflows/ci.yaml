@@ -37,11 +37,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       
-      - name: vercel pull
-        run: vercel pull --yes --environment=production --token=${{ secrets.GH_ACTIONS_VERCEL_TOKEN }}
+      - name: Install dependencies
+        run: yarn install
 
-      - name: build project
-        run: vercel build --prod --token=${{ secrets.GH_ACTIONS_VERCEL_TOKEN }}
+      - name: Build
+        run: yarn build
 
       - name: Deploy to Vercel
         uses: BetaHuhn/deploy-to-vercel-action@v1
