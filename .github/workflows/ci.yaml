@@ -17,12 +17,6 @@ jobs:
 
       - name: Build
         run: yarn build
-      
-      - name: vercel pull
-        run: vercel pull --yes --environment=production --token=${{ secrets.GH_ACTIONS_VERCEL_TOKEN }}
-
-      - name: build project
-        run: vercel build --prod --token=${{ secrets.GH_ACTIONS_VERCEL_TOKEN }}
 
   test:
     runs-on: ubuntu-latest
@@ -42,6 +36,18 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Build
+        run: yarn build
+      
+      - name: vercel pull
+        run: vercel pull --yes --environment=production --token=${{ secrets.GH_ACTIONS_VERCEL_TOKEN }}
+
+      - name: build project
+        run: vercel build --prod --token=${{ secrets.GH_ACTIONS_VERCEL_TOKEN }}
 
       - name: Deploy to Vercel
         uses: BetaHuhn/deploy-to-vercel-action@v1
