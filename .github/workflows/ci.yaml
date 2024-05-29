@@ -42,6 +42,5 @@ jobs:
           VERCEL_TOKEN: ${{ secrets.GH_ACTIONS_VERCEL_TOKEN }}
           VERCEL_ORG_ID: 67rdqStzHuCt5XHpBAkI4D3z
           VERCEL_PROJECT_ID: prj_H196ekz6YOalgeVLl5j9ket3xwY0
-          VERCEL_SCOPE: 67rdqStzHuCt5XHpBAkI4D3z
           PREBUILT: true
           PRODUCTION: true
