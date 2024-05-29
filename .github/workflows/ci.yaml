@@ -18,8 +18,14 @@ jobs:
       - name: Build
         run: yarn build
 
+      - name: vercel cli install
+        run: yarn add --global vercel@latest
+      
+      - name: vercel pull
+        run: vercel pull --yes --environment=production --token=${{ secrets.GH_ACTIONS_VERCEL_TOKEN }}
+
       - name: build project
-        run: vercel build --token=${{ secrets.GH_ACTIONS_VERCEL_TOKEN }}
+        run: vercel build --prod --token=${{ secrets.GH_ACTIONS_VERCEL_TOKEN }}
 
   test:
     runs-on: ubuntu-latest
