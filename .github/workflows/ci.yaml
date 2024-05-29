@@ -33,7 +33,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+
+    - name: build project
+        run: vercel build --token=${{ secrets.GH_ACTIONS_VERCEL_TOKEN }}
+
+    - uses: actions/checkout@v2
 
       - name: Deploy to Vercel
         uses: BetaHuhn/deploy-to-vercel-action@v1
